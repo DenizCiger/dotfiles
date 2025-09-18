@@ -75,7 +75,7 @@
     "format-disconnected": "󰖪 Disconnected",
     "format-alt": " {bandwidthDown} Mbps",
     "tooltip-format": "{ifname} via {gwaddr} ",
-    "on-click": "swaymsg exec '$terminal -e nmtui'"
+    "on-click": "sh -c 'kitty -e nmtui'"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
