@@ -1,0 +1,94 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 38,
+  "spacing": 8,
+  "margin-top": 8,
+  "margin-left": 8,
+  "margin-right": 8,
+
+  // Modules that will be displayed on the left
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+
+  // Modules that will be displayed in the center
+  "modules-center": ["clock"],
+
+  // Modules that will be displayed on the right
+  "modules-right": [
+    "power-profiles-daemon",
+    "pulseaudio",
+    "network",
+    "battery"
+  ],
+
+  // Module configurations
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 35
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Profile: {profile}",
+    "tooltip": true,
+    "format-icons": {
+      "power-saver": "",
+      "balanced": "",
+      "performance": ""
+    }
+  },
+  "clock": {
+    "format": " {:%H:%M}",
+    "format-alt": " {:%A, %b %d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip": true
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀 Connected",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": "󰖪 Disconnected",
+    "format-alt": " {bandwidthDown} Mbps",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "on-click": "swaymsg exec '$terminal -e nmtui'"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " Muted",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    },
+    "on-click": "pavucontrol"
+  }
+}
