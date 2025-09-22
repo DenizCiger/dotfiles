@@ -29,15 +29,16 @@ compinit
 source <(fzf --zsh)
 
 # Aliases
-alias zshconfig="nvim ~/.zshrc"
+alias zshconf="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias hyprconfig="nvim ~/.config/hypr/hyprland.conf"
-alias waybarconfig="nvim ~/.config/waybar/config.jsonc"
+alias hyprconf="nvim ~/.config/hypr/hyprland.conf"
+alias waybarconf="nvim ~/.config/waybar/config.jsonc"
 alias waybarcss="nvim ~/.config/waybar/style.css"
-alias kittyconfig="nvim ~/.config/kitty/kitty.conf"
+alias kittyconf="nvim ~/.config/kitty/kitty.conf"
 alias inv='nvim $(fzf -m --preview="bat --color=always {}")'
-alias nvimconfig="nvim ~/.config/nvim/"
+alias nvimconf="nvim ~/.config/nvim/"
 alias nvimconfvsc="vsc ~/.config/nvim/"
+alias opnot="nvim ~/Notes/"
 
 alias vsc="code-insiders"
 alias vscc="code-insiders ."

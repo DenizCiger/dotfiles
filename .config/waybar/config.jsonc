@@ -3,9 +3,7 @@
   "position": "top",
   "height": 38,
   "spacing": 8,
-  "margin-top": 8,
-  "margin-left": 8,
-  "margin-right": 8,
+  "padding-top": 8,
 
   // Modules that will be displayed on the left
   "modules-left": ["hyprland/workspaces", "hyprland/window"],

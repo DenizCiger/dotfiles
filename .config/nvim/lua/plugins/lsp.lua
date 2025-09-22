@@ -8,9 +8,40 @@ return {{
 }, {
     "neovim/nvim-lspconfig",
     config = function()
+        -- Always show diagnostics inline (virtual text)
+        vim.diagnostic.config({
+            virtual_text = true,
+            signs = true,
+            underline = true,
+            update_in_insert = true
+        })
+
+        -- Format on save
+        local function on_attach(client, bufnr)
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                buffer = bufnr,
+                callback = function()
+                    vim.lsp.buf.format({
+                        async = false
+                    })
+                end
+            })
+        end
+
         -- Enable LSP servers using vim.lsp.config (Neovim 0.11+)
-        vim.lsp.config("pyright", {})
-        vim.lsp.config("ts_ls", {})
+        vim.lsp.config("pyright", {
+            on_attach = on_attach
+        })
+        vim.lsp.config("ts_ls", {
+            on_attach = on_attach
+        })
+
+        vim.lsp.config("lua_ls", {
+            on_attach = on_attach
+        })
+        vim.lsp.config("omnisharp", {
+            on_attach = on_attach
+        })
 
         -- Recommended LSP keybindings
         local map = vim.keymap.set

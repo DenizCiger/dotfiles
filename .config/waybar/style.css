@@ -28,7 +28,7 @@
 
 window#waybar {
   background: @background-darker;
-  border-radius: 14px;
+  border-radius: 0px;
 }
 
 /* Base Module Styling */
