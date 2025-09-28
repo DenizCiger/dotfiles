@@ -1,124 +1,51 @@
-/*
- * Chronos-Dracula Theme for Waybar
- * A minimal and modern configuration
- */
+@import "colors.css";
 
-/* Import Dracula Colors */
-@define-color background-darker rgba(30, 31, 41, 0.9);
-@define-color background #282a36;
-@define-color selection #44475a;
-@define-color foreground #f8f8f2;
-@define-color comment #6272a4;
-@define-color cyan #8be9fd;
-@define-color green #50fa7b;
-@define-color orange #ffb86c;
-@define-color pink #ff79c6;
-@define-color purple #bd93f9;
-@define-color red #ff5555;
-@define-color yellow #f1fa8c;
-
-/* General Bar Styling */
 * {
   border: none;
-  border-radius: 12px;
-  font-family: "JetBrainsMono Nerd Font Propo", "JetBrainsMono", FontAwesome, sans-serif;
-  font-size: 14px;
+  border-radius: 0;
+  font-family: "SF Pro Display", "JetBrainsMono Nerd Font", Helvetica, Arial,
+    sans-serif;
+  font-size: 1.2rem;
   min-height: 0;
 }
 
 window#waybar {
-  background: @background-darker;
-  border-radius: 0px;
+  background: @transparent;
+  color: @on_surface;
 }
 
-/* Base Module Styling */
-#workspaces,
-#window,
-#clock,
-#pulseaudio,
-#network,
-#battery,
-#power-profiles-daemon {
-  padding: 4px 12px;
-  margin: 4px 0px;
-  color: @foreground;
-  background-color: @selection;
+tooltip {
+  background: @background;
+  border: 1px solid rgba(100, 114, 125, 0.5);
 }
 
-/* Left Modules */
+tooltip label {
+  color: @on_surface;
+}
+
 #workspaces button {
-  padding: 2px 5px;
-  color: @comment;
-  background-color: transparent;
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
+  padding: 0 7px;
+  margin: 10px 3px;
+  border-radius: 7px;
+  background: @secondary;
+  color: @on_secondary;
+  transition: all 0.3s ease;
 }
 
-#workspaces button.focused {
-  color: @foreground;
-  background-color: @purple;
+#workspaces button.active {
+  padding: 0 20px;
+  border-radius: 100px;
+  background: @primary;
+  color: @on_primary;
 }
 
-#workspaces button.urgent {
-  color: @background;
-  background-color: @red;
-}
-
-#workspaces button:hover {
-  background-color: @selection;
-  color: @cyan;
-}
-
-#window {
-  font-weight: bold;
-}
-
-/* Center Module */
-#clock {
-  font-weight: bold;
-  color: @background;
-  background-color: @purple;
-  padding: 4px 20px; /* Make the clock stand out */
-}
-
-/* Right Modules */
-#power-profiles-daemon {
-  background-color: @pink;
-  color: @background;
-  padding-right: 16px;
-}
-
-#pulseaudio {
-  background-color: @cyan;
-  color: @background;
-}
-
+#clock,
+#battery,
+#pulseaudio,
 #network {
-  background-color: @green;
-  color: @background;
-}
-
-#network.disconnected {
-  background-color: @red;
-}
-
-#battery {
-  background-color: @green;
-  color: @background;
-}
-
-#battery.charging,
-#battery.plugged {
-  background-color: @cyan;
-  color: @background;
-}
-
-#battery.warning {
-  background-color: @yellow;
-  color: @background;
-}
-
-#battery.critical {
-  background-color: @red;
-  color: @background;
+  padding: 5px 15px;
+  margin: 7px;
+  border-radius: 100px;
+  background-color: @primary;
+  color: @on_primary;
 }

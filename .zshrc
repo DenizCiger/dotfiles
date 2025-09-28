@@ -45,6 +45,7 @@ alias vscc="code-insiders ."
 
 # Startup animation
 # anifetch ~/Videos/Gif/rickroll.gif -ff -r 10 -W 40 -H 20
-neofetch
+# neofetch
+nitch
 
 export PATH=$PATH:/home/deniz/.spicetify
