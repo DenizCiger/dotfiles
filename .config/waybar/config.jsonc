@@ -13,10 +13,20 @@
   },
 
   "hyprland/workspaces": {
-    "format": "{name}",
-    "format-icons": {
-      "active": "",
-      "default": ""
+    "format": "{name} {windows}",
+    "format-window-separator": " ",
+    "window-rewrite-default": "•",
+    "window-rewrite": {
+      // Common apps — match on window class (regex)
+      "class<discord>": "",
+      "class<spotify>": "",
+      "class<(firefox|zen)>": "",
+      "class<(chromium|chrome|google-chrome|brave|brave-browser)>": "",
+      "class<(code|Code|code-oss)>": "󰨞",
+      "title<.*Insiders.*>": "󰨞",
+      "class<(idea|.*jetbrains.*|.*IntelliJ.*)>": "",
+      "class<rider>": "󰌛",
+      "class<kitty>": ""
     },
     "persistent-workspaces": {
       "*": 5, // 5 workspaces by default on every monitor
@@ -44,11 +54,10 @@
       "default": ["", ""]
     },
     "scroll-step": 1,
-    "on-click": "pavucontrol",
+    "on-click": "pavucontrol || pw-play",
     "ignored-sinks": ["Easy Effects Sink"]
   },
   "network": {
-    "interface": "wlan0",
     "format": "{ifname}",
     "format-wifi": "{essid} ",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",

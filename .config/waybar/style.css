@@ -24,9 +24,9 @@ tooltip label {
 }
 
 #workspaces button {
-  padding: 0 7px;
+  padding: 0 10px;
   margin: 10px 3px;
-  border-radius: 7px;
+  border-radius: 100px;
   background: @secondary;
   color: @on_secondary;
   transition: all 0.3s ease;
@@ -34,9 +34,21 @@ tooltip label {
 
 #workspaces button.active {
   padding: 0 20px;
-  border-radius: 100px;
   background: @primary;
   color: @on_primary;
+}
+
+#workspaces button:hover {
+  background: @primary;
+  color: @on_primary;
+}
+
+#workspaces button.urgent {
+  background: @error;
+}
+
+#workspaces button.empty {
+  opacity: 0.3;
 }
 
 #clock,

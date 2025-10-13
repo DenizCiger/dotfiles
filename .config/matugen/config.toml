@@ -1,5 +1,5 @@
 [config.wallpaper]
-set = false
+set = true
 
 command = "swww"
 
@@ -23,3 +23,8 @@ output_path = '~/.config/rofi/colors/matugen.rasi'
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
 post_hook = 'pkill waybar; waybar & disown'
+
+[templates.hyprlock]
+input_path = '~/.config/matugen/templates/hyprlock.conf'
+output_path = '~/.config/hypr/hyprlock.conf'
+# No post_hook: hyprlock reads this config when invoked (no runtime reload required)

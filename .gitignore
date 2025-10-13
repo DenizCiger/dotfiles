@@ -2,3 +2,4 @@
 .config/kitty/colors.conf
 .config/rofi/colors/
 .config/waybar/colors.css
+.config/hypr/hyprlock.conf
